@@ -1,0 +1,15 @@
+.post {
+  background-color: #FFF;
+  > a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+}
