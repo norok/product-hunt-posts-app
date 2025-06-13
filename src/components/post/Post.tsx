@@ -1,4 +1,5 @@
 import styles from './post.module.scss';
+import ArrowDropUpRoundedIcon from '@mui/icons-material/ArrowDropUpRounded';
 
 export const Post = () => {
   return (
@@ -11,6 +12,7 @@ export const Post = () => {
           <h3>Post Title</h3>
           <p>Post description goes here. This is a sample post content.</p>
           <div className={styles["post__likes"]}>
+            <ArrowDropUpRoundedIcon />
             123
           </div>
         </div>

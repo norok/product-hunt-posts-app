@@ -1,6 +1,51 @@
-.header {}
+@use 'mixins' as m;
+
+.header {
+  > h1 {
+    @include m.sr-only;
+  }
+
+  &-content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+  }
+}
 
 .user-menu {
-  &.__user {}
-  &.__links {}
+  position: relative;
+  &__user {
+    @include m.size(2.5rem);
+    border-radius: 2.5rem;
+    overflow: hidden;
+  }
+  &__username {
+    @include m.sr-only;
+  }
+  &__links {
+    position: absolute;
+    display: none;
+  }
+}
+
+.daytime {
+  background-color: var(--box-background);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  padding: 0.25rem 1.5rem;
+}
+
+.searchform {
+  height: 2.5rem;
+  &-button {
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    padding: 0;
+    @include m.size(2.5rem);
+  }
+  &-icon {
+    color: var(--inactive-color);
+  }
 }
