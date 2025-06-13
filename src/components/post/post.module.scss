@@ -3,7 +3,7 @@
 .post {
   background-color: #FFF;
   border-radius: 1rem;
-  padding: 1.5rem 1rem;
+  padding: 1.25rem 1rem;
 
   &__link {
     text-decoration: none;
@@ -35,7 +35,7 @@
       white-space: nowrap;
     }
     > h3 {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
     > p {
       color: var(--post-text);
@@ -59,8 +59,8 @@
       height: 2rem;
     }
     &__count {
-      font-size: 1rem;
-      font-weight: 700;
+      font-size: 0.75rem;
+      font-weight: 800;
     }
   }
 }
