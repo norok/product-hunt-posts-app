@@ -1,15 +1,66 @@
+@use 'mixins' as m;
+
 .post {
   background-color: #FFF;
-  > a {
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+
+  &__link {
     text-decoration: none;
     color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
   }
 
   &__image {
-    width: 100%;
-    max-width: 100px;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    @include m.size(3.5rem);
+    border-radius: 0.5rem;
+    flex: 1 0 auto;
+    overflow: hidden;
+    > img {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    > h3, > p {
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    > h3 {
+      font-size: 1.5rem;
+    }
+    > p {
+      color: var(--post-text);
+      font-size: 0.75rem;
+      height: 1.5em;
+    }
+  }
+
+  &__likes {
+    @include m.size(3.5rem);
+    background-color: #FFF;
+    border-radius: 0.5rem;
+    border: 2px solid var(--box-background);
+    flex: 1 0 auto;
+    font-size: 2.25rem;
+    line-height: 0;
+    margin-right: -1.5rem;
+    padding: 0.1rem 0;
+    text-align: center;
+    > svg {
+      height: 2rem;
+    }
+    &__count {
+      font-size: 1rem;
+      font-weight: 700;
+    }
   }
 }

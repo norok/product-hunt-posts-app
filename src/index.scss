@@ -4,6 +4,7 @@
   --box-background: #F2F4F2;
   --active-color: #c9765f;
   --inactive-color: #7f8382;
+  --post-text: #B3B3B3;
 
   font-family: Nunito, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -20,10 +21,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -43,6 +51,7 @@ body {
   place-items: start;
   min-width: 320px;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 ul, ol {

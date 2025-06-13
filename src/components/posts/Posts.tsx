@@ -9,6 +9,24 @@ export const Posts = () => {
         <li>
           <Post />
         </li>
+        <li>
+          <Post />
+        </li>
+        <li>
+          <Post />
+        </li>
+        <li>
+          <Post />
+        </li>
+        <li>
+          <Post />
+        </li>
+        <li>
+          <Post />
+        </li>
+        <li>
+          <Post />
+        </li>
       </ul>
     </section>
   )

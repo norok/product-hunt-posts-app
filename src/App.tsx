@@ -1,11 +1,11 @@
 import { Header, Tabs, Posts } from "./components";
+import styles from "./App.module.scss";
 
 function App() {
-
   return (
     <>
       <Header />
-      <main>
+      <main className={styles.main}>
         <Tabs />
         <Posts />
       </main>
