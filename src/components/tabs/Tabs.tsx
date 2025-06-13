@@ -33,7 +33,7 @@ const TabItem = (props: TabItemProps) => {
 
   return (
     <li className={`${styles["tabs__item"]} ${activeTab === tab.id ? styles["tabs__item--active"] : ''}`} key={tab.id}>
-      <button onClick={() => setActiveTab(tab.id)}>{tab.label}</button>
+      <button type="button" onClick={() => setActiveTab(tab.id)}>{tab.label}</button>
     </li>
   );
 }
