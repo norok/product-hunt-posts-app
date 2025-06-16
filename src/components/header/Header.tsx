@@ -2,10 +2,11 @@ import styles from './header.module.scss';
 
 export const Header = () => {
   const username = "Username";
+  const currentDate = new Date().toLocaleDateString("en-US", { dateStyle: "long" });
 
   return (
     <header className={styles.header}>
-      <h1>Product Hunt Posts App</h1>
+      <h1 data-testid="main-header">Product Hunt Posts App</h1>
       <div className={styles["header-content"]}>
         <nav className={styles["user-menu"]}>
           <div className={styles["user-menu__user"]}>
@@ -18,7 +19,7 @@ export const Header = () => {
             <li><a href="#">Logout</a></li>
           </ul>
         </nav>
-        <time className={styles.daytime}>Today, 12th Jun</time>
+        <time className={styles.daytime}>{currentDate}</time>
       </div>
     </header>
   );
