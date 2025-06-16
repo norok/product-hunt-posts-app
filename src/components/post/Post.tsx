@@ -1,22 +1,26 @@
 import styles from './post.module.scss';
 import KeyboardDoubleArrowUpRoundedIcon from '@mui/icons-material/KeyboardDoubleArrowUpRounded';
+import type { Post as PostDataType } from "../../features/posts/slice.ts";
 
-export const Post = () => {
+type PostType = {
+  postData: PostDataType
+}
+
+export const Post = (props: PostType) => {
+  const {name, tagline, url, votesCount, thumbnail} = props.postData;
   return (
-    <article className={styles.post}>
-      <a href="#" className={styles["post__link"]}>
-        <div className={styles["post__image"]}>
-          <img src="https://avatars.githubusercontent.com/u/13870070?v=4" alt="User Avatar" />
-        </div>
-        <div className={styles["post__content"]}>
-          <h3>Post Title</h3>
-          <p>Post description goes here. This is a sample post content.</p>
-        </div>
-        <div className={styles["post__likes"]}>
-          <KeyboardDoubleArrowUpRoundedIcon fontSize="inherit" />
-          <span className={styles["post__likes__count"]}>123</span>
-        </div>
-      </a>
+    <article className={styles.post} data-testid="post-item">
+      <div className={styles["post__image"]} data-testid="post-image">
+        <img src={thumbnail?.url || '/src/assets/no-logo.png'} alt="Product Logo"/>
+      </div>
+      <div className={styles["post__meta"]} data-testid="post-meta">
+        <h3><a data-testid="post-link" href={url} className={styles["post__link"]}>{name}</a></h3>
+        <p>{tagline}</p>
+      </div>
+      <div className={styles["post__votes"]} data-testid="post-votes">
+        <KeyboardDoubleArrowUpRoundedIcon fontSize="inherit"/>
+        <span className={styles["post__votes__count"]}>{votesCount}</span>
+      </div>
     </article>
   )
 }
