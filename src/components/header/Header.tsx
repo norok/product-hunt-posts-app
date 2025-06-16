@@ -1,5 +1,4 @@
 import styles from './header.module.scss';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 
 export const Header = () => {
   const username = "Username";
@@ -20,11 +19,6 @@ export const Header = () => {
           </ul>
         </nav>
         <time className={styles.daytime}>Today, 12th Jun</time>
-        <form className={styles.searchform}>
-          <button className={styles["searchform-button"]} type="button">
-            <SearchRoundedIcon className={styles["searchform-icon"]} fontSize={"inherit"} aria-label={"Search"} />
-          </button>
-        </form>
       </div>
     </header>
   );
