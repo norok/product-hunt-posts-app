@@ -35,7 +35,7 @@ describe('Header Component', () => {
 
   it('displays the current date', () => {
     // Mock the Date to return a consistent value
-    const mockDate = new Date(2023, 5, 12); // June 12, 2023
+    const mockDate = new Date(2025, 4, 11); // May 11, 2025
     vi.spyOn(window, 'Date').mockImplementation(() => mockDate as unknown as string & Date);
 
     render(<Header />);
@@ -45,6 +45,7 @@ describe('Header Component', () => {
     const dateElement = screen.getByText(formattedDate);
 
     expect(dateElement).toBeInTheDocument();
+    expect(dateElement).toHaveTextContent('May 11, 2025');
 
     // Restore the Date constructor
     vi.restoreAllMocks();
