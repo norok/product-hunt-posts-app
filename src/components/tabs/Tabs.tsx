@@ -1,27 +1,34 @@
-import {useState} from "react";
 import styles from './tabs.module.scss';
+import {useAppDispatch, useAppSelector} from "../../app/hooks.ts";
+import {setOrder, type OrderType} from "../../features/posts/slice.ts";
 
 type TabItemProps = {
   tab: {
-    id: number;
+    id: OrderType;
     label: string;
   };
-  activeTab: number;
-  setActiveTab: (id: number) => void;
+  activeTab: OrderType;
+  setActiveTab: (id: OrderType) => void;
 }
 
 export const Tabs = () => {
-  const [activeTab, setActiveTab] = useState(0);
-  const tabs = [
-    { id: 0, label: 'Popular' },
-    { id: 1, label: 'Newest' }
+  const dispatch = useAppDispatch();
+  const { order } = useAppSelector((state) => state.posts);
+
+  const setActiveTab = (id: OrderType) => {
+    dispatch(setOrder(id));
+  }
+
+  const tabs: {id: OrderType; label: string}[] = [
+    { id: 'RANKING', label: 'Popular' },
+    { id: 'NEWEST', label: 'Newest' }
   ];
 
   return (
-    <section className={styles.tabs}>
-      <ul className={styles["tabs__list"]}>
+    <section className={styles.tabs} data-testid="tabs">
+      <ul className={styles["tabs__list"]} data-testid="tabs-list">
         {tabs.map((tab) => (
-          <TabItem key={tab.id} tab={tab} activeTab={activeTab} setActiveTab={setActiveTab} />
+          <TabItem key={tab.id} tab={tab} activeTab={order} setActiveTab={setActiveTab} />
         ))}
       </ul>
     </section>
