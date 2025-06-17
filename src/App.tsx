@@ -7,7 +7,7 @@ function App() {
   return (
     <Provider store={store}>
       <Header />
-      <main className={styles.main}>
+      <main className={styles.main} data-testid="main">
         <Tabs />
         <Posts />
       </main>
